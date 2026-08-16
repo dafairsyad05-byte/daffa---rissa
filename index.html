@@ -2,326 +2,1063 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
 <title>Daffa ❤️ Rissa</title>
 
 <style>
+
+/* =========================
+   DASAR
+========================= */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background: #080006;
-  color: white;
-  font-family: Georgia, "Times New Roman", serif;
-  overflow-x: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #8b1748 0%,
+            #300717 35%,
+            #080006 75%
+        );
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background:
-    radial-gradient(circle at 50% 20%, #9c174955, transparent 35%),
-    radial-gradient(circle at 20% 80%, #ff174433, transparent 30%),
-    radial-gradient(circle at 80% 70%, #ff408133, transparent 30%);
-}
 
-/* HALAMAN PEMBUKA */
+/* =========================
+   PEMBUKA
+========================= */
+
 #opening {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 25px;
-  position: relative;
-  overflow: hidden;
-  background: radial-gradient(circle, #6d1238, #080006 70%);
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #79153f 0%,
+            #2b0615 45%,
+            #080006 85%
+        );
 }
 
-.container {
-  width: 100%;
-  max-width: 750px;
+.opening-content {
+    width: 100%;
+    max-width: 750px;
+
+    position: relative;
+    z-index: 5;
 }
 
-.small {
-  font-size: 11px;
-  letter-spacing: 6px;
-  color: #d7a7b6;
-  margin-bottom: 25px;
+.subtitle {
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    color: #dcb1c1;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
 }
 
-h1 {
-  font-size: clamp(45px, 12vw, 85px);
-  letter-spacing: 4px;
-  margin-bottom: 20px;
-  text-shadow:
-    0 0 15px #ff477e,
-    0 0 40px #ff1744;
+.title {
+    font-size:
+        clamp(45px, 12vw, 85px);
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 25px #ff1744,
+        0 0 50px #ff1744;
 }
 
 .date {
-  color: #cfa3b0;
-  letter-spacing: 5px;
-  font-size: 13px;
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #d6a7b6;
 }
 
 .quote {
-  max-width: 600px;
-  margin: 35px auto;
-  color: #d9bec7;
-  line-height: 2;
-  font-style: italic;
+    max-width: 600px;
+
+    margin: 35px auto;
+
+    color: #dec4cd;
+
+    line-height: 2;
+
+    font-size: 15px;
+
+    font-style: italic;
 }
 
-.enter {
-  padding: 17px 32px;
-  border: none;
-  border-radius: 50px;
-  color: white;
-  background: linear-gradient(135deg, #8d1743, #e91e63);
-  font-family: Georgia, serif;
-  letter-spacing: 2px;
-  cursor: pointer;
-  box-shadow: 0 0 25px #e91e6355;
-  transition: 0.3s;
+
+/* =========================
+   TOMBOL MASUK
+========================= */
+
+.enter-button {
+
+    border: 1px solid #ff7195;
+
+    border-radius: 50px;
+
+    padding:
+        17px 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #75143a,
+            #c91852
+        );
+
+    font-family:
+        Georgia,
+        serif;
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px #e91e6355,
+        0 0 50px #e91e6322;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 }
 
-.enter:hover {
-  transform: scale(1.07);
+.enter-button:hover {
+
+    transform:
+        scale(1.06);
+
+    box-shadow:
+        0 0 30px #ff477e99;
 }
 
-/* CERITA */
+
+/* =========================
+   CERITA
+========================= */
+
 #story {
-  display: none;
-  min-height: 100vh;
-  padding: 80px 20px;
-  background: radial-gradient(circle at center, #55112e, #080006 70%);
+
+    display: none;
+
+    min-height: 100vh;
+
+    padding:
+        70px 20px 100px;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #57102e,
+            #13030a 55%,
+            #080006 100%
+        );
 }
 
-.card {
-  max-width: 750px;
-  margin: auto;
-  padding: 35px 25px;
-  background: #25030fdd;
-  border: 1px solid #ff477e44;
-  border-radius: 25px;
-  box-shadow: 0 20px 70px #000;
+.story-card {
+
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: auto;
+
+    padding:
+        35px 25px 45px;
+
+    border-radius: 25px;
+
+    border:
+        1px solid #ff477e44;
+
+    background:
+        rgba(35, 3, 15, 0.90);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.7);
 }
 
-.card h2 {
-  text-align: center;
-  font-size: 35px;
-  margin-bottom: 35px;
-  text-shadow: 0 0 20px #ff1744;
+.story-title {
+
+    text-align: center;
+
+    font-size:
+        clamp(30px, 8vw, 45px);
+
+    margin-bottom: 40px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 20px #ff1744;
 }
 
-.card p {
-  color: #e5ccd5;
-  line-height: 2;
-  margin-bottom: 22px;
-  font-size: 16px;
+.story-card p {
+
+    color: #e6ccd5;
+
+    line-height: 2;
+
+    font-size: 16px;
+
+    margin-bottom: 23px;
 }
 
 .highlight {
-  color: #ff91ae !important;
-  font-size: 20px !important;
-  text-align: center;
+
+    color: #ff91ae !important;
+
+    text-align: center;
+
+    font-size: 21px !important;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 15px #ff1744;
 }
 
 .signature {
-  text-align: right;
-  color: #ff91ae;
-  font-size: 20px;
-  margin-top: 35px;
+
+    text-align: right;
+
+    color: #ff91ae;
+
+    font-size: 20px;
+
+    margin-top: 35px;
 }
 
-/* FOTO */
+
+/* =========================
+   FOTO
+========================= */
+
 .gallery-title {
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  font-size: 28px;
+
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-top: 65px;
+
+    margin-bottom: 25px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 15px #ff1744;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
 }
 
-.gallery img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid #ff477e55;
-  transition: 0.4s;
+.photo-box {
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border:
+        1px solid #ff477e55;
+
+    background: #16030b;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5);
 }
 
-.gallery img:hover {
-  transform: scale(1.03);
+.photo-box img {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s;
 }
 
-/* HALAMAN AKHIR */
+.photo-box:hover img {
+
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================
+   HALAMAN TERAKHIR
+========================= */
+
 .final {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-  background: radial-gradient(circle, #74143e, #080006 70%);
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle,
+            #74143e 0%,
+            #270610 45%,
+            #080006 85%
+        );
+}
+
+.final-content {
+
+    max-width: 700px;
 }
 
 .final h2 {
-  font-size: clamp(32px, 8vw, 60px);
-  text-shadow: 0 0 20px #ff1744;
+
+    font-size:
+        clamp(32px, 8vw, 60px);
+
+    line-height: 1.2;
+
+    text-shadow:
+        0 0 20px #ff1744;
+}
+
+.final-heart {
+
+    font-size: 75px;
+
+    margin: 30px;
+
+    animation:
+        pulse 1.5s infinite;
 }
 
 .final p {
-  color: #cda7b3;
-  margin-top: 20px;
-  line-height: 2;
+
+    color: #d2adb8;
+
+    line-height: 2;
+
+    margin-top: 10px;
 }
 
-.heart-big {
-  font-size: 75px;
-  margin: 30px;
-  animation: pulse 1.5s infinite;
+
+/* =========================
+   TOMBOL MUSIK
+========================= */
+
+#musicButton {
+
+    display: none;
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid #ff7195;
+
+    background:
+        rgba(60, 5, 25, 0.95);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 999;
+
+    box-shadow:
+        0 0 20px #ff174455;
 }
 
-/* TOMBOL MUSIK */
-.music {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 1px solid #ff7195;
-  background: #350017ee;
-  color: white;
-  font-size: 20px;
-  z-index: 100;
-  cursor: pointer;
-  display: none;
+
+/* =========================
+   HATI TERBANG
+========================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -40px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart linear forwards;
 }
 
-/* HATI */
-.heart {
-  position: fixed;
-  bottom: -30px;
-  pointer-events: none;
-  z-index: 50;
-  animation: heartUp linear forwards;
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.6);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 0.85;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            scale(1.3);
+
+        opacity: 0;
+    }
 }
 
-@keyframes heartUp {
-  0% {
-    transform: translateY(0) scale(0.7);
-    opacity: 0;
-  }
 
-  20% {
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: translateY(-110vh) scale(1.4);
-    opacity: 0;
-  }
-}
+/* =========================
+   ANIMASI JANTUNG
+========================= */
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
 
-  50% {
-    transform: scale(1.25);
-  }
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.25);
+    }
 }
+
+
+/* =========================
+   RESPONSIVE HP
+========================= */
 
 @media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
 
-  .card {
-    padding: 28px 20px;
-  }
+    .gallery {
 
-  .card p {
-    font-size: 15px;
-  }
+        grid-template-columns:
+            1fr;
+    }
+
+    .story-card {
+
+        padding:
+            30px 20px 40px;
+    }
+
+    .story-card p {
+
+        font-size: 15px;
+    }
+
+    .subtitle {
+
+        letter-spacing: 4px;
+    }
+
+    .quote {
+
+        font-size: 14px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- PEMBUKA -->
+
+<!-- ==================================================
+     HALAMAN PEMBUKA
+================================================== -->
+
 <section id="opening">
 
-  <div class="container">
+    <div class="opening-content">
 
-    <div class="small">
-      A STORY WRITTEN BY TWO HEARTS
+        <div class="subtitle">
+            A STORY WRITTEN BY TWO HEARTS
+        </div>
+
+        <h1 class="title">
+            DAFFA ❤️ RISSA
+        </h1>
+
+        <div class="date">
+            01 • 01 • 2025
+        </div>
+
+        <p class="quote">
+            "Some stories are written in books,
+            but ours is written in every moment
+            we've shared together."
+        </p>
+
+        <button
+            class="enter-button"
+            onclick="startStory()"
+        >
+            BUKA PESAN UNTUK RISSA ❤️
+        </button>
+
     </div>
-
-    <h1>
-      DAFFA ❤️ RISSA
-    </h1>
-
-    <div class="date">
-      01 • 01 • 2025
-    </div>
-
-    <p class="quote">
-      "Some stories are written in books, but ours is written in every
-      moment we've shared together."
-    </p>
-
-    <button class="enter" onclick="startStory()">
-      BUKA PESAN UNTUK RISSA ❤️
-    </button>
-
-  </div>
 
 </section>
 
 
-<!-- PESAN UNTUK RISSA -->
+
+<!-- ==================================================
+     CERITA DAN PERMINTAAN MAAF
+================================================== -->
+
 <section id="story">
 
-  <div class="card">
+    <div class="story-card">
 
-    <h2>
-      Untuk Rissa ❤️
-    </h2>
+        <h2 class="story-title">
+            Untuk Rissa ❤️
+        </h2>
 
-    <p>
-      Rissa...
-    </p>
 
-    <p>
-      Aku membuat halaman kecil ini karena ada sesuatu yang ingin aku
-      sampaikan dari hati.
-    </p>
+        <p>
+            Rissa...
+        </p>
 
-    <p class="highlight">
-      Aku minta maaf.
-    </p>
 
-    <p>
-      Aku sadar kalau selama ini aku terkadang terlalu egois.
-      Aku terlalu memikirkan apa yang aku mau dan apa yang aku ras
+        <p>
+            Aku membuat halaman kecil ini bukan sekadar
+            untuk membuat sesuatu yang indah, tapi karena
+            ada sesuatu yang benar-benar ingin aku
+            sampaikan dari hati.
+        </p>
+
+
+        <p class="highlight">
+            Aku minta maaf.
+        </p>
+
+
+        <p>
+            Aku sadar kalau selama ini aku terkadang
+            terlalu egois. Aku terlalu memikirkan apa
+            yang aku mau dan apa yang aku rasakan,
+            sampai mungkin aku lupa untuk melihat
+            semuanya dari sisi kamu.
+        </p>
+
+
+        <p>
+            Maaf kalau keegoisanku pernah membuat kamu
+            merasa tidak didengar, tidak dimengerti,
+            tidak dihargai, atau bahkan membuat kamu
+            terluka.
+        </p>
+
+
+        <p>
+            Aku tidak ingin mencari alasan untuk
+            membenarkan sikapku. Kalau memang aku salah,
+            aku ingin mengakuinya.
+        </p>
+
+
+        <p>
+            Aku sadar bahwa aku masih jauh dari sempurna.
+            Masih banyak hal dalam diriku yang harus
+            aku perbaiki.
+        </p>
+
+
+        <p>
+            Aku ingin belajar menjadi Daffa yang lebih
+            dewasa, lebih sabar, lebih mau mendengarkan,
+            dan lebih bisa memahami perasaanmu.
+        </p>
+
+
+        <p>
+            Aku tidak bisa mengubah apa yang sudah terjadi.
+            Tapi aku bisa berusaha supaya kesalahan yang
+            sama tidak terus aku ulangi.
+        </p>
+
+
+        <p>
+            Terima kasih untuk semua waktu yang pernah
+            kamu berikan. Terima kasih untuk semua cerita,
+            tawa, perhatian, dan kenangan yang pernah
+            kita lewati bersama.
+        </p>
+
+
+        <p>
+            Aku membuat halaman ini bukan untuk memaksamu
+            melakukan sesuatu dan bukan juga untuk meminta
+            kamu langsung melupakan semuanya.
+        </p>
+
+
+        <p>
+            Aku hanya ingin kamu tahu bahwa aku benar-benar
+            menyesal dan aku sadar bahwa sikap egoisku
+            bukan sesuatu yang seharusnya aku pertahankan.
+        </p>
+
+
+        <p class="highlight">
+            Maaf ya, Rissa. ❤️
+        </p>
+
+
+        <p>
+            Kalau masih ada kesempatan, aku ingin
+            menggunakan kesempatan itu untuk menjadi
+            seseorang yang lebih baik.
+        </p>
+
+
+        <div class="signature">
+            — Daffa ❤️
+        </div>
+
+
+
+        <!-- ==================================================
+             GALERI FOTO
+        ================================================== -->
+
+        <h3 class="gallery-title">
+            Kenangan Kita 📸
+        </h3>
+
+
+        <div class="gallery">
+
+
+            <!-- FOTO 1 -->
+
+            <div class="photo-box">
+
+                <img
+                    src="IMG-20260221-WA0084.jpg"
+                    alt="Kenangan Daffa dan Rissa"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- FOTO 2 -->
+
+            <div class="photo-box">
+
+                <img
+                    src="IMG-20260314-WA0072.jpg"
+                    alt="Kenangan Daffa dan Rissa"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- FOTO 3 -->
+
+            <div class="photo-box">
+
+                <img
+                    src="IMG_20260625_205907_413.webp"
+                    alt="Kenangan Daffa dan Rissa"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- FOTO 4 -->
+
+            <div class="photo-box">
+
+                <img
+                    src="5ac26dbfdc28cc49abe92b519949d5df.png"
+                    alt="Kenangan Daffa dan Rissa"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     HALAMAN PENUTUP
+================================================== -->
+
+<section class="final">
+
+    <div class="final-content">
+
+        <h2>
+            Cerita Kita Belum Selesai...
+        </h2>
+
+
+        <div class="final-heart">
+            ❤️
+        </div>
+
+
+        <p>
+            Daffa × Rissa
+        </p>
+
+
+        <p>
+            01 • 01 • 2025
+        </p>
+
+
+        <p>
+            Semoga masih ada kesempatan untuk
+            memperbaiki semuanya dan menulis
+            cerita yang lebih baik.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     TOMBOL MUSIK
+================================================== -->
+
+<button
+    id="musicButton"
+    aria-label="Putar atau hentikan musik"
+>
+    🎵
+</button>
+
+
+
+<!-- ==================================================
+     MUSIK
+================================================== -->
+
+<audio
+    id="music"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="Angle baby.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<script>
+
+/* ==================================================
+   ELEMENT
+================================================== */
+
+const music =
+    document.getElementById("music");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+
+/* ==================================================
+   MASUK KE CERITA
+================================================== */
+
+function startStory() {
+
+    /*
+     * Menyembunyikan halaman pembuka
+     */
+
+    document.getElementById("opening")
+        .style.display = "none";
+
+
+    /*
+     * Menampilkan cerita
+     */
+
+    document.getElementById("story")
+        .style.display = "block";
+
+
+    /*
+     * Menampilkan tombol musik
+     */
+
+    musicButton.style.display = "block";
+
+
+    /*
+     * Karena fungsi ini dipanggil
+     * setelah pengguna menekan tombol,
+     * browser biasanya mengizinkan musik diputar.
+     */
+
+    music.play()
+        .then(function () {
+
+            musicButton.innerHTML = "🔊";
+
+        })
+        .catch(function () {
+
+            /*
+             * Kalau browser tetap menolak,
+             * pengguna tinggal menekan tombol musik.
+             */
+
+            musicButton.innerHTML = "🎵";
+
+        });
+
+
+    /*
+     * Kembali ke bagian atas
+     */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+/* ==================================================
+   PLAY / PAUSE MUSIK
+================================================== */
+
+musicButton.addEventListener(
+    "click",
+    function () {
+
+        if (music.paused) {
+
+            music.play()
+                .then(function () {
+
+                    musicButton.innerHTML = "🔊";
+
+                })
+                .catch(function () {
+
+                    musicButton.innerHTML = "🎵";
+
+                });
+
+        } else {
+
+            music.pause();
+
+            musicButton.innerHTML = "🎵";
+
+        }
+
+    }
+);
+
+
+
+/* ==================================================
+   ANIMASI HATI
+================================================== */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className =
+        "floating-heart";
+
+
+    /*
+     * Pilihan emoji hati
+     */
+
+    const hearts = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💘"
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+
+    /*
+     * Posisi horizontal random
+     */
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    /*
+     * Ukuran random
+     */
+
+    heart.style.fontSize =
+        (12 + Math.random() * 18) + "px";
+
+
+    /*
+     * Kecepatan random
+     */
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+
+    document.body.appendChild(heart);
+
+
+    /*
+     * Hapus setelah animasi
+     */
+
+    setTimeout(
+        function () {
+
+            heart.remove();
+
+        },
+        10000
+    );
+
+}
+
+
+
+/* ==================================================
+   JALANKAN ANIMASI HATI
+================================================== */
+
+setInterval(
+    createHeart,
+    700
+);
+
+</script>
+
+
+</body>
+</html>
