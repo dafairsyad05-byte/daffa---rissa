@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daffa ❤️ Rissa</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+      color: white;
+      background:
+        radial-gradient(circle at 50% 30%, #8b163f 0%, #3a0b22 35%, #10040c 75%);
+    }
+
+    .screen {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .glow {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: #ff2f75;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.25;
+      animation: pulse 4s infinite alternate;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 25px;
+      animation: appear 2s ease;
+    }
+
+    .small {
+      font-size: 14px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 13vw, 80px);
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 30px rgba(255, 80, 130, 0.7);
+    }
+
+    h1 span {
+      color: #ff6f9e;
+    }
+
+    .date {
+      font-size: 18px;
+      letter-spacing: 4px;
+      margin-bottom: 40px;
+      opacity: 0.85;
+    }
+
+    .quote {
+      max-width: 500px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.8;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 15px 30px;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 50px;
+      background: rgba(255, 60, 110, 0.2);
+      color: white;
+      font-size: 15px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+    }
+
+    button:hover {
+      background: #ff3f78;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 63, 120, 0.6);
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -30px;
+      color: #ff4f86;
+      font-size: 20px;
+      animation: float 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .heart:nth-child(2) {
+      left: 25%;
+      animation-delay: 2s;
+      font-size: 14px;
+    }
+
+    .heart:nth-child(3) {
+      left: 50%;
+      animation-delay: 4s;
+      font-size: 25px;
+    }
+
+    .heart:nth-child(4) {
+      left: 75%;
+      animation-delay: 1s;
+      font-size: 16px;
+    }
+
+    .heart:nth-child(5) {
+      left: 90%;
+      animation-delay: 5s;
+      font-size: 24px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5) rotate(20deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(0.9);
+        opacity: 0.2;
+      }
+      to {
+        transform: scale(1.2);
+        opacity: 0.35;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="screen">
+
+    <div class="glow"></div>
+
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+    <div class="heart">♥</div>
+
+    <div class="content">
+
+      <div class="small">
+        A story written by two hearts
+      </div>
+
+      <h1>
+        DAFFA <span>×</span> RISSA
+      </h1>
+
+      <div class="date">
+        01 · 01 · 2025
+      </div>
+
+      <div class="quote">
+        "Some stories are written in books,
+        but ours is written in every moment
+        we've shared together."
+      </div>
+
+      <button onclick="startStory()">
+        ENTER OUR STORY ❤️
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+    function startStory() {
+      alert("Cerita Daffa ❤️ Rissa akan segera dimulai...");
+    }
+  </script>
+
+</body>
+</html>
