@@ -1,231 +1,327 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daffa ❤️ Rissa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daffa ❤️ Rissa</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      min-height: 100vh;
-      overflow: hidden;
-      font-family: Georgia, "Times New Roman", serif;
-      color: white;
-      background:
-        radial-gradient(circle at 50% 30%, #8b163f 0%, #3a0b22 35%, #10040c 75%);
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .screen {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
+body {
+  background: #080006;
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
+}
 
-    .glow {
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      background: #ff2f75;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.25;
-      animation: pulse 4s infinite alternate;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 50% 20%, #9c174955, transparent 35%),
+    radial-gradient(circle at 20% 80%, #ff174433, transparent 30%),
+    radial-gradient(circle at 80% 70%, #ff408133, transparent 30%);
+}
 
-    .content {
-      position: relative;
-      z-index: 2;
-      padding: 25px;
-      animation: appear 2s ease;
-    }
+/* HALAMAN PEMBUKA */
+#opening {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle, #6d1238, #080006 70%);
+}
 
-    .small {
-      font-size: 14px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      opacity: 0.75;
-      margin-bottom: 25px;
-    }
+.container {
+  width: 100%;
+  max-width: 750px;
+}
 
-    h1 {
-      font-size: clamp(42px, 13vw, 80px);
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-      text-shadow: 0 0 30px rgba(255, 80, 130, 0.7);
-    }
+.small {
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: #d7a7b6;
+  margin-bottom: 25px;
+}
 
-    h1 span {
-      color: #ff6f9e;
-    }
+h1 {
+  font-size: clamp(45px, 12vw, 85px);
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 15px #ff477e,
+    0 0 40px #ff1744;
+}
 
-    .date {
-      font-size: 18px;
-      letter-spacing: 4px;
-      margin-bottom: 40px;
-      opacity: 0.85;
-    }
+.date {
+  color: #cfa3b0;
+  letter-spacing: 5px;
+  font-size: 13px;
+}
 
-    .quote {
-      max-width: 500px;
-      margin: auto;
-      font-size: 18px;
-      line-height: 1.8;
-      font-style: italic;
-      opacity: 0.9;
-    }
+.quote {
+  max-width: 600px;
+  margin: 35px auto;
+  color: #d9bec7;
+  line-height: 2;
+  font-style: italic;
+}
 
-    button {
-      margin-top: 40px;
-      padding: 15px 30px;
-      border: 1px solid rgba(255,255,255,0.5);
-      border-radius: 50px;
-      background: rgba(255, 60, 110, 0.2);
-      color: white;
-      font-size: 15px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: 0.4s;
-    }
+.enter {
+  padding: 17px 32px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(135deg, #8d1743, #e91e63);
+  font-family: Georgia, serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #e91e6355;
+  transition: 0.3s;
+}
 
-    button:hover {
-      background: #ff3f78;
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(255, 63, 120, 0.6);
-    }
+.enter:hover {
+  transform: scale(1.07);
+}
 
-    .heart {
-      position: absolute;
-      bottom: -30px;
-      color: #ff4f86;
-      font-size: 20px;
-      animation: float 8s linear infinite;
-      opacity: 0.7;
-    }
+/* CERITA */
+#story {
+  display: none;
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: radial-gradient(circle at center, #55112e, #080006 70%);
+}
 
-    .heart:nth-child(1) {
-      left: 10%;
-      animation-delay: 0s;
-    }
+.card {
+  max-width: 750px;
+  margin: auto;
+  padding: 35px 25px;
+  background: #25030fdd;
+  border: 1px solid #ff477e44;
+  border-radius: 25px;
+  box-shadow: 0 20px 70px #000;
+}
 
-    .heart:nth-child(2) {
-      left: 25%;
-      animation-delay: 2s;
-      font-size: 14px;
-    }
+.card h2 {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 35px;
+  text-shadow: 0 0 20px #ff1744;
+}
 
-    .heart:nth-child(3) {
-      left: 50%;
-      animation-delay: 4s;
-      font-size: 25px;
-    }
+.card p {
+  color: #e5ccd5;
+  line-height: 2;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
 
-    .heart:nth-child(4) {
-      left: 75%;
-      animation-delay: 1s;
-      font-size: 16px;
-    }
+.highlight {
+  color: #ff91ae !important;
+  font-size: 20px !important;
+  text-align: center;
+}
 
-    .heart:nth-child(5) {
-      left: 90%;
-      animation-delay: 5s;
-      font-size: 24px;
-    }
+.signature {
+  text-align: right;
+  color: #ff91ae;
+  font-size: 20px;
+  margin-top: 35px;
+}
 
-    @keyframes float {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 0;
-      }
-      15% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(-110vh) scale(1.5) rotate(20deg);
-        opacity: 0;
-      }
-    }
+/* FOTO */
+.gallery-title {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
 
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
 
-    @keyframes pulse {
-      from {
-        transform: scale(0.9);
-        opacity: 0.2;
-      }
-      to {
-        transform: scale(1.2);
-        opacity: 0.35;
-      }
-    }
-  </style>
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid #ff477e55;
+  transition: 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* HALAMAN AKHIR */
+.final {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background: radial-gradient(circle, #74143e, #080006 70%);
+}
+
+.final h2 {
+  font-size: clamp(32px, 8vw, 60px);
+  text-shadow: 0 0 20px #ff1744;
+}
+
+.final p {
+  color: #cda7b3;
+  margin-top: 20px;
+  line-height: 2;
+}
+
+.heart-big {
+  font-size: 75px;
+  margin: 30px;
+  animation: pulse 1.5s infinite;
+}
+
+/* TOMBOL MUSIK */
+.music {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #ff7195;
+  background: #350017ee;
+  color: white;
+  font-size: 20px;
+  z-index: 100;
+  cursor: pointer;
+  display: none;
+}
+
+/* HATI */
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 50;
+  animation: heartUp linear forwards;
+}
+
+@keyframes heartUp {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-110vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 28px 20px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="screen">
+<!-- PEMBUKA -->
+<section id="opening">
 
-    <div class="glow"></div>
+  <div class="container">
 
-    <div class="heart">♥</div>
-    <div class="heart">♥</div>
-    <div class="heart">♥</div>
-    <div class="heart">♥</div>
-    <div class="heart">♥</div>
-
-    <div class="content">
-
-      <div class="small">
-        A story written by two hearts
-      </div>
-
-      <h1>
-        DAFFA <span>×</span> RISSA
-      </h1>
-
-      <div class="date">
-        01 · 01 · 2025
-      </div>
-
-      <div class="quote">
-        "Some stories are written in books,
-        but ours is written in every moment
-        we've shared together."
-      </div>
-
-      <button onclick="startStory()">
-        ENTER OUR STORY ❤️
-      </button>
-
+    <div class="small">
+      A STORY WRITTEN BY TWO HEARTS
     </div>
+
+    <h1>
+      DAFFA ❤️ RISSA
+    </h1>
+
+    <div class="date">
+      01 • 01 • 2025
+    </div>
+
+    <p class="quote">
+      "Some stories are written in books, but ours is written in every
+      moment we've shared together."
+    </p>
+
+    <button class="enter" onclick="startStory()">
+      BUKA PESAN UNTUK RISSA ❤️
+    </button>
 
   </div>
 
-  <script>
-    function startStory() {
-      alert("Cerita Daffa ❤️ Rissa akan segera dimulai...");
-    }
-  </script>
+</section>
 
-</body>
-</html>
+
+<!-- PESAN UNTUK RISSA -->
+<section id="story">
+
+  <div class="card">
+
+    <h2>
+      Untuk Rissa ❤️
+    </h2>
+
+    <p>
+      Rissa...
+    </p>
+
+    <p>
+      Aku membuat halaman kecil ini karena ada sesuatu yang ingin aku
+      sampaikan dari hati.
+    </p>
+
+    <p class="highlight">
+      Aku minta maaf.
+    </p>
+
+    <p>
+      Aku sadar kalau selama ini aku terkadang terlalu egois.
+      Aku terlalu memikirkan apa yang aku mau dan apa yang aku ras
